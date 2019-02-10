@@ -88,6 +88,10 @@
                 RelativePanel.AlignBottomWith="parameterResizer"
                 RelativePanel.RightOf="parameterResizer" />
 
+        <Button Click="{x:Bind ViewModel.GotoMetersPage}" Content="Meters"
+                RelativePanel.AlignBottomWith="parameterResizer"
+                RelativePanel.RightOf="parameterResizer" />
+
         <TextBlock x:Name="stateTextBox" Margin="16,16,0,0"
                    RelativePanel.AlignLeftWith="parameterResizer"
                    RelativePanel.Below="parameterResizer"

@@ -1,16 +1,15 @@
 ﻿<common:BootStrapper x:Class="MeterAppT10.App"
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:resources="using:MeterAppT10.Resources"
                      xmlns:common="using:Template10.Common">
 
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles\Custom.xaml" />
+                <resources:Templates />
             </ResourceDictionary.MergedDictionaries>
-
-            <!--  custom resources  -->
-
         </ResourceDictionary>
     </Application.Resources>
 

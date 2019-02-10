@@ -1,0 +1,38 @@
+﻿<Page x:Class="MeterAppT10.Views.MetersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:resources="using:MeterAppT10.Resources"
+      xmlns:viewModels="using:MeterAppT10.ViewModels">
+
+    <Page.DataContext>
+        <viewModels:MetersPageViewModel />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <resources:CustomDataTemplateSelector x:Key="CustomDataTemplateSelector" />
+    </Page.Resources>
+
+    <SplitView Background="White"
+               IsPaneOpen="{Binding IsEditing, Mode=TwoWay}"
+               PaneBackground="LightBlue">
+        <SplitView.Pane>
+            <StackPanel>
+                <TextBlock Text="Panel with properties" />
+                <TextBlock Text="{Binding EditedMeter.Name}" />
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+                <Button Command="{Binding UpdateMetersCommand}"
+                        Content="Update meters" />
+
+                <ListBox ItemTemplateSelector="{StaticResource CustomDataTemplateSelector}"
+                         ItemsSource="{Binding Meters}" />
+
+            </StackPanel>
+        </SplitView.Content>
+    </SplitView>
+
+
+</Page>
