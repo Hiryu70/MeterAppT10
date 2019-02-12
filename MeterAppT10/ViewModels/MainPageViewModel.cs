@@ -52,6 +52,9 @@ namespace MeterAppT10.ViewModels
         public void GotoMetersPage() =>
             NavigationService.Navigate(typeof(Views.MetersPage), Value);
 
+        public void GotoReadingsPage() =>
+            NavigationService.Navigate(typeof(Views.ReadingsPage), Value);
+
         public void GotoSettings() =>
             NavigationService.Navigate(typeof(Views.SettingsPage), 0);
 

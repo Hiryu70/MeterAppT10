@@ -10,27 +10,40 @@
 
     <Page.Resources>
         <resources:CustomDataTemplateSelector x:Key="CustomDataTemplateSelector" />
+        <resources:ReadingsDataTemplateSelector x:Key="ReadingsDataTemplateSelector" />
     </Page.Resources>
 
-    <Grid>
+    <Grid Margin="15">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
         <ListView Grid.Column="0"
                   ItemTemplateSelector="{StaticResource CustomDataTemplateSelector}"
-                  ItemsSource="{Binding SelectedZigbeeMeter}" />
+                  ItemsSource="{Binding ZigbeeMeters}"
+                  SelectedItem="{Binding SelectedZigbeeMeter, Mode=TwoWay}" />
 
         <Grid Grid.Column="1">
-
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
+
             <ContentControl Grid.Row="0"
-                            Content="{Binding SelectedZigbeeMeter}"
-                            ContentTemplateSelector="{StaticResource CustomDataTemplateSelector}" />
+                            Content="{Binding SelectedZigbeeMeter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            ContentTemplateSelector="{StaticResource ReadingsDataTemplateSelector}" />
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal">
+                <Button Command="{Binding SelectedZigbeeMeter.OkCommand}"
+                        Content="Ok" />
+                <Button Command="{Binding SelectedZigbeeMeter.NotOkCommand}"
+                        Content="NotOk" />
+                <Button Command="{Binding SelectedZigbeeMeter.NotCheckedCommand}"
+                        Content="NotChecked" />
+                <Button Command="{Binding SelectedZigbeeMeter.SkipCommand}"
+                        Content="Skip" />
+            </StackPanel>
         </Grid>
 
     </Grid>

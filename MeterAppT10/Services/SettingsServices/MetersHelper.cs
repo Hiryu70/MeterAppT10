@@ -6,6 +6,8 @@ namespace MeterAppT10.Services.SettingsServices
 {
     public static class MetersHelper
     {
+        private static readonly Random _random = new Random();
+
         public static IEnumerable<ZigbeeMeter> GetZigbeeMeters()
         {
             List<ZigbeeMeter> zigbeeMeters = new List<ZigbeeMeter>();
@@ -27,14 +29,12 @@ namespace MeterAppT10.Services.SettingsServices
 
         private static int GetRandomPrototype()
         {
-            var random = new Random();
-            return random.Next(0, 2);
+            return _random.Next(0, 2);
         }
 
         private static int GetRandomPower()
         {
-            var random = new Random();
-            return random.Next(0, 100);
+            return _random.Next(0, 100);
         }
     }
 }

@@ -6,7 +6,7 @@ using MeterAppT10.Models;
 
 namespace MeterAppT10.Converters
 {
-    public class LevelToColorValueConverter : IValueConverter
+    public class LevelToColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {

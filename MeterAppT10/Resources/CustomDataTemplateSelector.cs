@@ -16,7 +16,8 @@ namespace MeterAppT10.Resources
             _templateDictionary = new Dictionary<Type, DataTemplate>
             {
                 {typeof(ElectricMeterViewModel), (DataTemplate) Application.Current.Resources["ElectricTemplate"]},
-                {typeof(GasMeterViewModel), (DataTemplate) Application.Current.Resources["GasTemplate"]}
+                {typeof(GasMeterViewModel), (DataTemplate) Application.Current.Resources["GasTemplate"]},
+                {typeof(ZigbeeMeterViewModel), (DataTemplate) Application.Current.Resources["ZigbeeMeterListTemplate"]}
             };
         }
 
@@ -32,6 +33,9 @@ namespace MeterAppT10.Resources
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
+            if (item == null)
+                return new DataTemplate();
+
             Type itemType = item.GetType();
             DataTemplate dataTemplate = _templateDictionary.Keys.Contains(itemType)
                 ? _templateDictionary[itemType]

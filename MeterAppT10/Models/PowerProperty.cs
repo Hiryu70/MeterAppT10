@@ -13,12 +13,12 @@
 
         private static Level GetLevel(int value)
         {
-            if (50 < value)
+            if (50 <= value)
             {
                 return Level.Normal;
             }
 
-            if (20 < value && value < 50)
+            if (20 <= value && value < 50)
             {
                 return Level.High;
             }
