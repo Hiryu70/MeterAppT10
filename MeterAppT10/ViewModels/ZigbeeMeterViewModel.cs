@@ -1,4 +1,5 @@
-﻿using MeterAppT10.Models;
+﻿using System;
+using MeterAppT10.Models;
 using Template10.Mvvm;
 
 namespace MeterAppT10.ViewModels
@@ -21,6 +22,8 @@ namespace MeterAppT10.ViewModels
             SkipCommand = new DelegateCommand(Skip);
         }
 
+
+        public event EventHandler StatusSet;
 
         public CheckStatus CheckStatus
         {
@@ -49,21 +52,24 @@ namespace MeterAppT10.ViewModels
         private void Ok()
         {
             CheckStatus = CheckStatus.Ok;
+            StatusSet?.Invoke(this, EventArgs.Empty);
         }
 
         private void NotOk()
         {
             CheckStatus = CheckStatus.NotOk;
+            StatusSet?.Invoke(this, EventArgs.Empty);
         }
 
         private void NotChecked()
         {
             CheckStatus = CheckStatus.NotChecked;
+            StatusSet?.Invoke(this, EventArgs.Empty);
         }
 
         private void Skip()
         {
-
+            StatusSet?.Invoke(this, EventArgs.Empty);
         }
     }
 }

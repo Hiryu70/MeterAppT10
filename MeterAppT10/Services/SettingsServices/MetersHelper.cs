@@ -8,13 +8,32 @@ namespace MeterAppT10.Services.SettingsServices
     {
         private static readonly Random _random = new Random();
 
-        public static IEnumerable<ZigbeeMeter> GetZigbeeMeters()
+        public static IEnumerable<MbusMeter> GetMbusMeters()
         {
-            List<ZigbeeMeter> zigbeeMeters = new List<ZigbeeMeter>();
+            var meters = new List<MbusMeter>();
 
             for (int i = 0; i < 10; i++)
             {
-                zigbeeMeters.Add(new ZigbeeMeter
+                meters.Add(new MbusMeter
+                {
+                    SerialNumber = Guid.NewGuid().ToString(),
+                    Prototype = GetRandomPrototype(),
+                    Voltage1 = GetRandomVoltage(),
+                    Voltage2 = GetRandomVoltage(),
+                    Voltage3 = GetRandomVoltage()
+                });
+            }
+
+            return meters;
+        }
+
+        public static IEnumerable<ZigbeeMeter> GetZigbeeMeters()
+        {
+            var meters = new List<ZigbeeMeter>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                meters.Add(new ZigbeeMeter
                 {
                     SerialNumber = Guid.NewGuid().ToString(),
                     Prototype = GetRandomPrototype(),
@@ -24,17 +43,22 @@ namespace MeterAppT10.Services.SettingsServices
                 });
             }
 
-            return zigbeeMeters;
+            return meters;
         }
 
         private static int GetRandomPrototype()
         {
-            return _random.Next(0, 2);
+            return _random.Next(0, 3);
         }
 
         private static int GetRandomPower()
         {
             return _random.Next(0, 100);
+        }
+
+        private static int GetRandomVoltage()
+        {
+            return _random.Next(180, 250);
         }
     }
 }

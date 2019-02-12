@@ -17,11 +17,11 @@ namespace MeterAppT10.Resources
                 switch (zigbeeMeter.Prototype)
                 {
                     case 0:
-                        return (DataTemplate) Application.Current.Resources["ZigbeeMeterReadingsTemplate"];
+                        return (DataTemplate) Application.Current.Resources["ZigbeeMeterPrototype0ReadingsTemplate"];
                     case 1:
-                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterReadingsTemplate"];
+                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterPrototype1ReadingsTemplate"];
                     case 2:
-                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterReadingsTemplate"];
+                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterPrototype2ReadingsTemplate"];
                 }
             }
 
@@ -38,11 +38,11 @@ namespace MeterAppT10.Resources
                 switch (zigbeeMeter.Prototype)
                 {
                     case 0:
-                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterReadingsTemplate"];
+                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterPrototype0ReadingsTemplate"];
                     case 1:
-                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterReadingsTemplate"];
+                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterPrototype1ReadingsTemplate"];
                     case 2:
-                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterReadingsTemplate"];
+                        return (DataTemplate)Application.Current.Resources["ZigbeeMeterPrototype2ReadingsTemplate"];
                 }
             }
 

@@ -95,7 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\CheckToColorConverter.cs" />
     <Compile Include="Converters\LevelToColorConverter.cs" />
+    <Compile Include="Models\MbusMeter.cs" />
     <Compile Include="Models\ServiceCategory.cs" />
     <Compile Include="Models\ZigbeeMeter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

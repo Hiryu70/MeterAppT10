@@ -26,22 +26,34 @@
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-
-            <ContentControl Grid.Row="0"
+            <TextBlock Margin="10"
+                       FontWeight="Bold"
+                       Text="Readings" />
+            <ContentControl Grid.Row="1"
                             Content="{Binding SelectedZigbeeMeter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                             ContentTemplateSelector="{StaticResource ReadingsDataTemplateSelector}" />
-            <StackPanel Grid.Row="1"
+            <StackPanel Grid.Row="2"
+                        Margin="40,0,0,0"
                         Orientation="Horizontal">
-                <Button Command="{Binding SelectedZigbeeMeter.OkCommand}"
+                <Button Width="100"
+                        Margin="5"
+                        Command="{Binding SelectedZigbeeMeter.OkCommand}"
                         Content="Ok" />
-                <Button Command="{Binding SelectedZigbeeMeter.NotOkCommand}"
+                <Button Width="100"
+                        Margin="5"
+                        Command="{Binding SelectedZigbeeMeter.NotOkCommand}"
                         Content="NotOk" />
-                <Button Command="{Binding SelectedZigbeeMeter.NotCheckedCommand}"
+                <Button Width="100"
+                        Margin="5"
+                        Command="{Binding SelectedZigbeeMeter.NotCheckedCommand}"
                         Content="NotChecked" />
-                <Button Command="{Binding SelectedZigbeeMeter.SkipCommand}"
+                <Button Width="100"
+                        Margin="5"
+                        Command="{Binding SelectedZigbeeMeter.SkipCommand}"
                         Content="Skip" />
             </StackPanel>
         </Grid>
