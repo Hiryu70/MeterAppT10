@@ -7,8 +7,8 @@
     <converters:LevelToColorConverter x:Key="LevelToColorConverter" />
     <converters:CheckToColorConverter x:Key="CheckToColorConverter" />
 
-    <DataTemplate x:Key="ZigbeeMeterListTemplate"
-                  x:DataType="viewModels:ZigbeeMeterViewModel">
+    <DataTemplate x:Key="ReadingsMeterListTemplate"
+                  x:DataType="viewModels:ReadingsMeterViewModel">
         <Grid>
             <Grid BorderBrush="Black"
                   BorderThickness="1">
@@ -33,12 +33,9 @@
 
                 <TextBlock Grid.Row="1"
                            Grid.Column="0"
+                           Grid.ColumnSpan="2"
                            Margin="5"
-                           Text="Prototype" />
-                <TextBlock Grid.Row="1"
-                           Grid.Column="1"
-                           Margin="5"
-                           Text="{Binding Prototype}" />
+                           Text="{Binding FullType}" />
 
                 <TextBlock Grid.Row="2"
                            Grid.Column="0"
@@ -127,7 +124,6 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
-                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0"
@@ -176,8 +172,6 @@
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0"
@@ -198,6 +192,150 @@
                       Margin="5"
                       Background="{Binding Power1.Level, Converter={StaticResource LevelToColorConverter}}">
                     <TextBlock Text="{Binding Power1.Value}" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MbusMeterPrototype0ReadingsTemplate"
+                  x:DataType="viewModels:MbusMeterViewModel">
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Id" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="1"
+                           Margin="5"
+                           Text="{Binding SerialNumber}" />
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Voltage1" />
+                <Grid Grid.Row="1"
+                      Grid.Column="1"
+                      Margin="5"
+                      Background="{Binding Voltage1.Level, Converter={StaticResource LevelToColorConverter}}">
+                    <TextBlock Text="{Binding Voltage1.Value}" />
+                </Grid>
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Voltage2" />
+                <Grid Grid.Row="2"
+                      Grid.Column="1"
+                      Margin="5"
+                      Background="{Binding Voltage2.Level, Converter={StaticResource LevelToColorConverter}}">
+                    <TextBlock Text="{Binding Voltage2.Value}" />
+                </Grid>
+
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Voltage3" />
+                <Grid Grid.Row="3"
+                      Grid.Column="1"
+                      Margin="5"
+                      Background="{Binding Voltage3.Level, Converter={StaticResource LevelToColorConverter}}">
+                    <TextBlock Text="{Binding Voltage3.Value}" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MbusMeterPrototype1ReadingsTemplate"
+                  x:DataType="viewModels:MbusMeterViewModel">
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Id" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="1"
+                           Margin="5"
+                           Text="{Binding SerialNumber}" />
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Voltage1" />
+                <Grid Grid.Row="1"
+                      Grid.Column="1"
+                      Margin="5"
+                      Background="{Binding Voltage1.Level, Converter={StaticResource LevelToColorConverter}}">
+                    <TextBlock Text="{Binding Voltage1.Value}" />
+                </Grid>
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Voltage2" />
+                <Grid Grid.Row="2"
+                      Grid.Column="1"
+                      Margin="5"
+                      Background="{Binding Voltage2.Level, Converter={StaticResource LevelToColorConverter}}">
+                    <TextBlock Text="{Binding Voltage2.Value}" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MbusMeterPrototype2ReadingsTemplate"
+                  x:DataType="viewModels:MbusMeterViewModel">
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Id" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="1"
+                           Margin="5"
+                           Text="{Binding SerialNumber}" />
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="5"
+                           Text="Voltage1" />
+                <Grid Grid.Row="1"
+                      Grid.Column="1"
+                      Margin="5"
+                      Background="{Binding Voltage1.Level, Converter={StaticResource LevelToColorConverter}}">
+                    <TextBlock Text="{Binding Voltage1.Value}" />
                 </Grid>
             </Grid>
         </Grid>

@@ -17,7 +17,7 @@ namespace MeterAppT10.Resources
             {
                 {typeof(ElectricMeterViewModel), (DataTemplate) Application.Current.Resources["ElectricTemplate"]},
                 {typeof(GasMeterViewModel), (DataTemplate) Application.Current.Resources["GasTemplate"]},
-                {typeof(ZigbeeMeterViewModel), (DataTemplate) Application.Current.Resources["ZigbeeMeterListTemplate"]}
+                {typeof(ZigbeeMeterViewModel), (DataTemplate) Application.Current.Resources["ReadingsMeterListTemplate"]}
             };
         }
 

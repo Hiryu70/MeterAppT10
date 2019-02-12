@@ -97,7 +97,9 @@
     </Compile>
     <Compile Include="Converters\CheckToColorConverter.cs" />
     <Compile Include="Converters\LevelToColorConverter.cs" />
+    <Compile Include="Models\CommunicationType.cs" />
     <Compile Include="Models\MbusMeter.cs" />
+    <Compile Include="Models\VoltageChannel.cs" />
     <Compile Include="Models\ServiceCategory.cs" />
     <Compile Include="Models\ZigbeeMeter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,14 +117,16 @@
     <Compile Include="Models\CheckStatus.cs" />
     <Compile Include="ViewModels\ElectricMeterViewModel.cs" />
     <Compile Include="ViewModels\GasMeterViewModel.cs" />
-    <Compile Include="Models\ILevelProperty.cs" />
+    <Compile Include="Models\ILevelChannel.cs" />
     <Compile Include="Models\Level.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\MetersPageViewModel.cs" />
-    <Compile Include="Models\PowerProperty.cs" />
+    <Compile Include="Models\PowerChannel.cs" />
     <Compile Include="ViewModels\ReadingsMetersViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="ViewModels\ReadingsMeterViewModel.cs" />
+    <Compile Include="ViewModels\MbusMeterViewModel.cs" />
     <Compile Include="ViewModels\ZigbeeMeterViewModel.cs" />
     <Compile Include="Views\Busy.xaml.cs">
       <DependentUpon>Busy.xaml</DependentUpon>

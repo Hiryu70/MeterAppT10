@@ -58,7 +58,7 @@ namespace MeterAppT10.Services.SettingsServices
 
         private static int GetRandomVoltage()
         {
-            return _random.Next(180, 250);
+            return _random.Next(180, 260);
         }
     }
 }

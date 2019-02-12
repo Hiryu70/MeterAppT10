@@ -21,8 +21,8 @@
 
         <ListView Grid.Column="0"
                   ItemTemplateSelector="{StaticResource CustomDataTemplateSelector}"
-                  ItemsSource="{Binding ZigbeeMeters}"
-                  SelectedItem="{Binding SelectedZigbeeMeter, Mode=TwoWay}" />
+                  ItemsSource="{Binding Meters}"
+                  SelectedItem="{Binding SelectedMeter, Mode=TwoWay}" />
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -34,26 +34,26 @@
                        FontWeight="Bold"
                        Text="Readings" />
             <ContentControl Grid.Row="1"
-                            Content="{Binding SelectedZigbeeMeter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Content="{Binding SelectedMeter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                             ContentTemplateSelector="{StaticResource ReadingsDataTemplateSelector}" />
             <StackPanel Grid.Row="2"
                         Margin="40,0,0,0"
                         Orientation="Horizontal">
                 <Button Width="100"
                         Margin="5"
-                        Command="{Binding SelectedZigbeeMeter.OkCommand}"
+                        Command="{Binding SelectedMeter.OkCommand}"
                         Content="Ok" />
                 <Button Width="100"
                         Margin="5"
-                        Command="{Binding SelectedZigbeeMeter.NotOkCommand}"
+                        Command="{Binding SelectedMeter.NotOkCommand}"
                         Content="NotOk" />
                 <Button Width="100"
                         Margin="5"
-                        Command="{Binding SelectedZigbeeMeter.NotCheckedCommand}"
+                        Command="{Binding SelectedMeter.NotCheckedCommand}"
                         Content="NotChecked" />
                 <Button Width="100"
                         Margin="5"
-                        Command="{Binding SelectedZigbeeMeter.SkipCommand}"
+                        Command="{Binding SelectedMeter.SkipCommand}"
                         Content="Skip" />
             </StackPanel>
         </Grid>

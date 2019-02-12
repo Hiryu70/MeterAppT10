@@ -10,16 +10,23 @@ namespace MeterAppT10.ViewModels
 {
     public class ReadingsMetersViewModel : ViewModelBase
     {
-        private ZigbeeMeterViewModel _selectedZigbeeMeter;
+        private ReadingsMeterViewModel _selectedMeter;
 
         public ReadingsMetersViewModel()
         {
             IEnumerable<ZigbeeMeter> zigbeeMeters = MetersHelper.GetZigbeeMeters();
-
             foreach (ZigbeeMeter meter in zigbeeMeters)
             {
                 var meterViewModel = new ZigbeeMeterViewModel(meter);
-                ZigbeeMeters.Add(meterViewModel);
+                Meters.Add(meterViewModel);
+                meterViewModel.StatusSet += MeterViewModelOnStatusSet;
+            }
+
+            IEnumerable<MbusMeter> mbusMeters = MetersHelper.GetMbusMeters();
+            foreach (MbusMeter meter in mbusMeters)
+            {
+                var meterViewModel = new MbusMeterViewModel(meter);
+                Meters.Add(meterViewModel);
                 meterViewModel.StatusSet += MeterViewModelOnStatusSet;
             }
         }
@@ -27,16 +34,16 @@ namespace MeterAppT10.ViewModels
         private void MeterViewModelOnStatusSet(object sender, EventArgs eventArgs)
         {
             var viewModel = (ZigbeeMeterViewModel) sender;
-            SelectedZigbeeMeter = ZigbeeMeters.SkipWhile(m => m != viewModel).Skip(1).FirstOrDefault();
+            SelectedMeter = Meters.SkipWhile(m => m != viewModel).Skip(1).FirstOrDefault();
         }
 
-        public ObservableCollection<ZigbeeMeterViewModel> ZigbeeMeters { get; } =
-            new ObservableCollection<ZigbeeMeterViewModel>();
+        public ObservableCollection<ReadingsMeterViewModel> Meters { get; } =
+            new ObservableCollection<ReadingsMeterViewModel>();
 
-        public ZigbeeMeterViewModel SelectedZigbeeMeter
+        public ReadingsMeterViewModel SelectedMeter
         {
-            get => _selectedZigbeeMeter;
-            set => Set(ref _selectedZigbeeMeter, value);
+            get => _selectedMeter;
+            set => Set(ref _selectedMeter, value);
         }
     }
 }
