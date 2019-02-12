@@ -33,7 +33,7 @@ namespace MeterAppT10.ViewModels
 
         private void MeterViewModelOnStatusSet(object sender, EventArgs eventArgs)
         {
-            var viewModel = (ZigbeeMeterViewModel) sender;
+            var viewModel = (ReadingsMeterViewModel) sender;
             SelectedMeter = Meters.SkipWhile(m => m != viewModel).Skip(1).FirstOrDefault();
         }
 

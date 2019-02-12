@@ -8,9 +8,9 @@ namespace MeterAppT10.ViewModels
         {
             CommunicationType = CommunicationType.Mbus;
 
-            Voltage1 = new PowerChannel(meter.Voltage1);
-            Voltage2 = new PowerChannel(meter.Voltage2);
-            Voltage3 = new PowerChannel(meter.Voltage3);
+            Voltage1 = new VoltageChannel(meter.Voltage1);
+            Voltage2 = new VoltageChannel(meter.Voltage2);
+            Voltage3 = new VoltageChannel(meter.Voltage3);
         }
 
 

@@ -17,21 +17,22 @@ namespace MeterAppT10.Resources
             {
                 {typeof(ElectricMeterViewModel), (DataTemplate) Application.Current.Resources["ElectricTemplate"]},
                 {typeof(GasMeterViewModel), (DataTemplate) Application.Current.Resources["GasTemplate"]},
-                {typeof(ZigbeeMeterViewModel), (DataTemplate) Application.Current.Resources["ReadingsMeterListTemplate"]}
+                {typeof(ZigbeeMeterViewModel), (DataTemplate) Application.Current.Resources["ReadingsMeterListTemplate"]},
+                {typeof(MbusMeterViewModel), (DataTemplate) Application.Current.Resources["ReadingsMeterListTemplate"]}
             };
         }
 
         protected override DataTemplate SelectTemplateCore(object item)
         {
-            Type itemType = item.GetType();
-            DataTemplate dataTemplate = _templateDictionary.Keys.Contains(itemType)
-                ? _templateDictionary[itemType]
-                : null;
-
-            return dataTemplate;
+            return InnerSelectTemplate(item);
         }
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
+        {
+            return InnerSelectTemplate(item);
+        }
+
+        private DataTemplate InnerSelectTemplate(object item)
         {
             if (item == null)
                 return new DataTemplate();
