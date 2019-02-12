@@ -14,10 +14,14 @@
 
         <ResourceDictionary x:Key="Light">
 
-            <SolidColorBrush x:Key="CustomColorBrush" Color="{StaticResource CustomColor}" />
-            <SolidColorBrush x:Key="ContrastColorBrush" Color="{StaticResource ContrastColor}" />
-            <SolidColorBrush x:Key="ExtendedSplashBackground" Color="{StaticResource CustomColor}" />
-            <SolidColorBrush x:Key="ExtendedSplashForeground" Color="{StaticResource ContrastColor}" />
+            <SolidColorBrush x:Key="CustomColorBrush"
+                             Color="{StaticResource CustomColor}" />
+            <SolidColorBrush x:Key="ContrastColorBrush"
+                             Color="{StaticResource ContrastColor}" />
+            <SolidColorBrush x:Key="ExtendedSplashBackground"
+                             Color="{StaticResource CustomColor}" />
+            <SolidColorBrush x:Key="ExtendedSplashForeground"
+                             Color="{StaticResource ContrastColor}" />
 
             <Style TargetType="controls:HamburgerMenu">
                 <Setter Property="AccentColor" Value="{StaticResource CustomColor}" />
@@ -40,10 +44,14 @@
 
         <ResourceDictionary x:Key="Default">
 
-            <SolidColorBrush x:Key="CustomColorBrush" Color="{StaticResource CustomColor}" />
-            <SolidColorBrush x:Key="ContrastColorBrush" Color="{StaticResource ContrastColor}" />
-            <SolidColorBrush x:Key="ExtendedSplashBackground" Color="{StaticResource CustomColor}" />
-            <SolidColorBrush x:Key="ExtendedSplashForeground" Color="{StaticResource ContrastColor}" />
+            <SolidColorBrush x:Key="CustomColorBrush"
+                             Color="{StaticResource CustomColor}" />
+            <SolidColorBrush x:Key="ContrastColorBrush"
+                             Color="{StaticResource ContrastColor}" />
+            <SolidColorBrush x:Key="ExtendedSplashBackground"
+                             Color="{StaticResource CustomColor}" />
+            <SolidColorBrush x:Key="ExtendedSplashForeground"
+                             Color="{StaticResource ContrastColor}" />
 
             <Style TargetType="controls:HamburgerMenu">
 
@@ -89,8 +97,10 @@
 
         <ResourceDictionary x:Key="HighContrast">
 
-            <SolidColorBrush x:Key="ExtendedSplashBackground" Color="Black" />
-            <SolidColorBrush x:Key="ExtendedSplashForeground" Color="White" />
+            <SolidColorBrush x:Key="ExtendedSplashBackground"
+                             Color="Black" />
+            <SolidColorBrush x:Key="ExtendedSplashForeground"
+                             Color="White" />
 
             <Style TargetType="controls:HamburgerMenu">
                 <Setter Property="PaneBorderThickness" Value="0" />
